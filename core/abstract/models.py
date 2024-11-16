@@ -19,3 +19,4 @@ class AbstractModel(models.Model):
     objects = AbstractManager()
     class Meta:
         abstract = True
+

@@ -42,9 +42,16 @@ INSTALLED_APPS = [
     'core.user',
     'rest_framework',
     'core.order',
+    'rest_framework_simplejwt'
 ]
 
 AUTH_USER_MODEL = 'core_user.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
+    'DEFAULT_FILTER_BACKENDS':
+    ['django_filters.rest_framework.DjangoFilterBackend'],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,3 +139,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

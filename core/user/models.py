@@ -27,7 +27,7 @@ class User(AbstractBaseUser, AbstractModel,PermissionsMixin):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(db_index=True, unique=True)
-    phone_number = models.IntegerField(unique=True)
+    phone_number = models.IntegerField(unique=True, null=True)
     password = models.CharField(max_length=300)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
