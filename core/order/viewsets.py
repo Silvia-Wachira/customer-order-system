@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from core.abstract.viewsets import AbstractViewSet
 from core.order.models import Order
 from core.order.serializers import OrderSerializer
@@ -7,7 +7,7 @@ from core.order.serializers import OrderSerializer
 
 class OrderViewSet(AbstractViewSet):
     http_method_names = ('post', 'get')
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAuthenticated,)
     serializer_class = OrderSerializer
 
     def get_queryset(self):
