@@ -6,6 +6,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 # from core.auth.serializers import RegisterSerializer
 from core.auth.serializers.register import RegisterSerializer
 
+# ViewSet to handle user registration, creating a new user and issuing JWT tokens (access and refresh).
 class RegisterViewSet(ViewSet):
     serializer_class = RegisterSerializer
     permission_classes = (AllowAny,)

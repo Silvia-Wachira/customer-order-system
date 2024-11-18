@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,14 +20,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
+ENV = os.environ.get("ENV")
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4p%#5ew6xi#+m9#3=37rx2pl*=3pw^l!#8$=$!5$_fu2rx1+@j'
+
+SECRET_KEY = os.environ.get(
+ "SECRET_KEY", default=
+"django-insecure-4p%#5ew6xi#+m9#3=37rx2pl*=3pw^l!#8$=$!5$_fu2rx1+@j")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False if ENV == "PROD" else True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default="*").split(",")
 
 
 # Application definition
@@ -87,16 +92,28 @@ WSGI_APPLICATION = 'UnicornRoot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME':'nyatidb',
+#         'USER':'unicorn',
+#         'PASSWORD':'wCh29&HE&T83',
+#         'HOST':'localhost',
+#         'PORT':'5432'
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'nyatidb',
-        'USER':'unicorn',
-        'PASSWORD':'wCh29&HE&T83',
-        'HOST':'localhost',
-        'PORT':'5432'
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("DATABASE_NAME", "nyatidb"),  
+        "USER": os.getenv("DATABASE_USER", "unicorn"),  
+        "PASSWORD": os.getenv("DATABASE_PASSWORD", "wCh29&HE&T83"), 
+        "HOST": os.getenv("DATABASE_HOST", "localhost"),  
+        "PORT": os.getenv("DATABASE_PORT", "5432"),  
     }
 }
+
 
 
 # Password validation

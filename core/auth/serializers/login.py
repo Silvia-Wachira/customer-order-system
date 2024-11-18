@@ -3,6 +3,7 @@ from rest_framework_simplejwt.settings import api_settings
 from django.contrib.auth.models import update_last_login
 from core.user.serializers import UserSerializer
 
+# Custom serializer to handle user login, generate JWT tokens, and include user details in the response.
 class LoginSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)

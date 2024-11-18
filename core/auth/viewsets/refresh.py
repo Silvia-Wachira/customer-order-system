@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework_simplejwt.exceptions import TokenError,InvalidToken
 
+# ViewSet to handle JWT token refresh, validating the provided refresh token and issuing new tokens.
 class RefreshViewSet(viewsets.ViewSet, TokenRefreshView):
     permission_classes = (AllowAny,)
     http_method_names = ['post']   

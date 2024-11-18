@@ -11,7 +11,6 @@ class UserViewSet(AbstractViewSet):
 
     def get_queryset(self):   
         # if self.request.user:
-        #     return User.objects.all()
         return User.objects.all()
     
     def get_object(self):
