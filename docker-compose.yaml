@@ -8,8 +8,12 @@ services:
       - POSTGRES_USER=unicorn
       - POSTGRES_PASSWORD=wCh29&HE&T83
       - POSTGRES_DB=nyatidb
+      
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - ./init-db:/docker-entrypoint-initdb.d
+    ports:
+      - "5436:5432"
 
   api:
     container_name: postagram_api

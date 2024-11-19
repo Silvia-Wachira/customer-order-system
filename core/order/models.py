@@ -6,9 +6,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from core.abstract.models import AbstractModel,AbstractManager
 from django.http import Http404
 
-
-
 # Create your models here.
+
+#   Represents an order placed by a customer,
 class OrderManager(AbstractManager):
     pass
 

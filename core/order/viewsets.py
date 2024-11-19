@@ -7,25 +7,35 @@ from core.order.serializers import OrderSerializer
 
 # Create your views here.
 
-# username = 'sandbox'
-# api_key = 'atsk_bc46b6b18d2da6a2942684d9938187305a066d14ca1d634aa52407f5937a14d771c56732'
-# africastalking.initialize(username, api_key)
+import africastalking
 
-# sms = africastalking.SMS
-# class SendSMS:
-#     def sending(self):
-#         # Set the numbers in international format
-#         recipients = ["+254705361989"]
-#         # Set your message
-#         message = "Hey AT Ninja!"
-#         # Set your shortCode or senderId
-#         sender = "45788"
+# TODO: Initialize Africa's Talking
 
-#         try:
-#             response = sms.send(message, recipients, sender)
-#             print(response)
-#         except Exception as e:
-#             print(f"Houston, we have a problem: {e}")
+
+username = 'sandbox'
+api_key = 'atsk_bc46b6b18d2da6a2942684d9938187305a066d14ca1d634aa52407f5937a14d771c56732'
+africastalking.initialize(username, api_key)
+
+sms = africastalking.SMS
+
+class send_sms():
+        
+        #TODO: Send message
+        
+    def sending(self):
+            # Set the numbers in international format
+            recipients = ["+254705361989"]
+            # Set your message
+            message = "Hey Client!";
+            # Set your shortCode or senderId
+            sender = "45788"
+            try:
+                response = sms.send(message, recipients, sender)
+                print (response)
+            except Exception as e:
+                print (f'Houston, we have a problem: {e}')
+
+
 
 class OrderViewSet(AbstractViewSet):
     http_method_names = ('post', 'get')
@@ -44,5 +54,6 @@ class OrderViewSet(AbstractViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
+        send_sms().sending()
         return Response(serializer.data,status=status.HTTP_201_CREATED)
     

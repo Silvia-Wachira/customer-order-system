@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'UnicornRoot.wsgi.application'
 #         'NAME':'nyatidb',
 #         'USER':'unicorn',
 #         'PASSWORD':'wCh29&HE&T83',
-#         'HOST':'localhost',
+#         'HOST':'db',
 #         'PORT':'5432'
 #     }
 # }
@@ -109,10 +109,11 @@ DATABASES = {
         "NAME": os.getenv("DATABASE_NAME", "nyatidb"),  
         "USER": os.getenv("DATABASE_USER", "unicorn"),  
         "PASSWORD": os.getenv("DATABASE_PASSWORD", "wCh29&HE&T83"), 
-        "HOST": os.getenv("DATABASE_HOST", "localhost"),  
-        "PORT": os.getenv("DATABASE_PORT", "5432"),  
+        "HOST": os.getenv("DATABASE_HOST", "postagram_db"),  
+        "PORT": os.getenv("DATABASE_PORT", "5436"),  
     }
 }
+
 
 
 
