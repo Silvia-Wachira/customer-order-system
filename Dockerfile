@@ -9,10 +9,8 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update \
  && apk add postgresql-dev gcc python3-dev musl-dev
 # install python dependencies
-COPY requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
-# copy project
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY . .
 
 # Expose port 8080
