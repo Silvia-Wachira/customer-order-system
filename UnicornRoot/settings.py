@@ -53,7 +53,8 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'core_user.User'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework_simplejwt.authentication.JWTAuthentication',),
     'DEFAULT_FILTER_BACKENDS':
     ['django_filters.rest_framework.DjangoFilterBackend'],
 }
@@ -94,17 +95,18 @@ WSGI_APPLICATION = 'UnicornRoot.wsgi.application'
 
 
 
+import os
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("DATABASE_NAME", "nyatidb"),  
-        "USER": os.getenv("DATABASE_USER", "unicorn"),  
-        "PASSWORD": os.getenv("DATABASE_PASSWORD", "wCh29&HE&T83"), 
-        "HOST": os.getenv("DATABASE_HOST", "postagram_db"),  
-        "PORT": os.getenv("DATABASE_PORT", "5436"),  
+        "NAME": "nyatidb",
+        "USER": "unicorn",
+        "PASSWORD": "wCh29&HE&T83",
+        "HOST": "localhost",
+        "PORT": "5436",  # This matches the port we just successfully connected to
     }
 }
-
 
 
 

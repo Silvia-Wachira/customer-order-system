@@ -49,5 +49,3 @@ class User(AbstractBaseUser, AbstractModel,PermissionsMixin):
         return f"{self.first_name} {self.last_name}"
 
 # Create your models here.
-
-# Create your models here.
