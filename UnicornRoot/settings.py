@@ -104,7 +104,7 @@ DATABASES = {
         "USER": "unicorn",
         "PASSWORD": "wCh29&HE&T83",
         "HOST": "localhost",
-        "PORT": "5436",  # This matches the port we just successfully connected to
+        "PORT": "5436",  
     }
 }
 
