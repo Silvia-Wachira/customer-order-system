@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
     env_file: .env
     ports:
-      - "8081:8080" # I've changed from "8080:8080" since my port is 8080 is already in use
+      - "8081:8080"
     command: >
       sh -c "python manage.py migrate --no-input && gunicorn UnicornRoot.wsgi:application --bind 0.0.0.0:8080"
     volumes:
