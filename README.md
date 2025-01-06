@@ -7,17 +7,20 @@ This is a Python service to manage customers and orders, with integrated SMS not
 * - **REST API**: Manage customers and orders.
 * - **JWT Authentication**: Secure API endpoints.
 * - **SMS Notifications**: Send order updates via [Africa's Talking](https://africastalking.com/).
-* - **Automated Testing**: Includes unit tests for API routes and services.
+* - **Automated Testing**: Includes unit tests.
  
 # Technologies Used
 * Django
 * PostgreSQL
+* Africa's Talking
 # Set Up Instructions
 * Clone the repository
-* cd panda
-* python -m venv venv
-* source venv/bin/activate
-* pip install -r requirements.txt
+* Navigate to the project directory
+* Install dependencies
+* Set up environment variables
+* Create a virtual environment
+* Activate the virtual environment
+* Install the required dependencies
 
 # License
 MIT License
