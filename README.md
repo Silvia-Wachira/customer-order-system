@@ -2,7 +2,7 @@
 # Author
 Silvia Wachira 
 # Description
-This is a Python service to manage customers and orders, with integrated SMS notifications. 
+This is a Python service to manage customers and orders, with integrated SMS notifications.  
 # Key Features
 * - **REST API**: Manage customers and orders.
 * - **JWT Authentication**: Secure API endpoints.
