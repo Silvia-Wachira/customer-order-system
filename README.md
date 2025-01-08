@@ -13,6 +13,7 @@ This is a Python service to manage customers and orders, with integrated SMS not
 * Django
 * PostgreSQL
 * Africa's Talking
+* Docker
 # Set Up Instructions
 * Clone the repository
 * Navigate to the project directory
