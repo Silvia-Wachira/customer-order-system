@@ -95,8 +95,7 @@ WSGI_APPLICATION = 'UnicornRoot.wsgi.application'
 
 
 
-import os
-
+#(for local development)
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
@@ -104,12 +103,22 @@ DATABASES = {
         "USER": "unicorn",
         "PASSWORD": "wCh29&HE&T83",
         "HOST": "localhost",
-        "PORT": "5436",  
+        "PORT": "5432",  
     }
 }
 
+# docker for docker environment)
 
-
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "nyatidb",
+#         "USER": "unicorn",
+#         "PASSWORD": "wCh29&HE&T83",
+#         "HOST": "postagram_db",
+#         "PORT": "5432",  
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
