@@ -2,6 +2,8 @@ from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated
 from core.abstract.viewsets import AbstractViewSet
 from core.order.models import Order
+from rest_framework.response import Response
+from rest_framework import status
 from core.order.serializers import OrderSerializer
 # import africastalking
 
@@ -26,7 +28,7 @@ class send_sms():
             # Set the numbers in international format
             recipients = ["+254705361989"]
             # Set your message
-            message = "Hey Client!";
+            message = "Your order has been receiver Silvia!";
             # Set your shortCode or senderId
             sender = "45788"
             try:
